@@ -1,17 +1,37 @@
-// 산술 연산자(arithmetic operator)
+// 비교 연산자(comparison operator)
 
-console.log(1 + 2);
-console.log(5 - 2);
-console.log(1 + 2);
-console.log(10 / 2);
-console.log(10 % 3);
+const a = 1;
+const b = 1;
 
-// 할당 연산자(assignment operator)
+console.log(a === b);
 
-const a = 1; // 재할당 불가능
+function isEqual (x, y) {
+    return x === y;
+}
 
-let b = 2; // 재할당 가능
-b += 1 // b = b + 1;
+console.log(isEqual(1, 2));
+console.log(isEqual(1, '2'));
 
-console.log(b);
+const c = 1;
+const d = 1;
 
+console.log(c !== d);
+console.log(c < d);
+console.log(c > d);
+console.log(c <= d);
+console.log(c >= d);
+
+// 논리 연산자(logical operator)
+
+const e = 1 === 1;
+const f = 'ab' === 'ab';
+const g = false;
+
+console.log(e);
+console.log(f);
+console.log(g);
+
+console.log('&&: ', e && f && g);
+console.log('||: ', e || f || g);
+console.log('!: ', e);
+console.log('!: ', !e);
