@@ -1,11 +1,18 @@
-// 삼항 연산자(ternaty operator)
+import random from "./getRandom";
 
-const a = 1 < 2;
+// 조건문 (IF statement)
 
-if (a) {
-    console.log('참');
+console.log(random());
+
+const a = random();
+console.log(a);
+
+if (a === 0) {
+    console.log('a is 0');
+} else if (a === 2) {
+    console.log('a is 2');
+} else if (a === 3) {
+    console.log('a is 3');
 } else {
-    console.log('거짓');
+    console.log('rest...');
 }
-
-console.log(a ? '참' : '거짓');
