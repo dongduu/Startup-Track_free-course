@@ -1,35 +1,12 @@
-// 함수 복습
+// 화살표 함수
+// ( ) => { } vs function ( ) { }
 
-function sum (x, y) { 
-    return x + y
-    console.log(x);
+// 기존 함수(익명 함수)
+const double = function (x) {
+    return x * 2;
 }
+console.log('double: ', double(2));
 
-const a = sum(1, 2); 
-const b = sum(12, 43);
-
-console.log(a);
-console.log(b);
-console.log(a + b);
-
-const sum2 = function (x, y) { 
-    return x + y
-}
-
-sum2(3, 4);
-
-function sum3 (x, y) { 
-    if (x < 2) {
-        return;
-    }
-    return x + y
-}
-
-console.log(sum3(1, 3));
-
-function sum4 () { 
-    console.log(arguments);
-    return arguments[0] + arguments[1];
-}
-
-console.log(sum4(12, 12));
+// 화살표 함수
+const doubleArrow = x => ({name: 'dongdu'});
+console.log('doublrArrow: ', doubleArrow(2));
