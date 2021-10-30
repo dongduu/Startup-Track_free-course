@@ -1,12 +1,13 @@
-// 화살표 함수
-// ( ) => { } vs function ( ) { }
+// 즉시실행함수
+// IIFE(Immediately-Invoked Function Expression)
 
-// 기존 함수(익명 함수)
-const double = function (x) {
-    return x * 2;
+const a = 7;
+
+function double () {
+    console.log(a * 2);
 }
-console.log('double: ', double(2));
+double();
 
-// 화살표 함수
-const doubleArrow = x => ({name: 'dongdu'});
-console.log('doublrArrow: ', doubleArrow(2));
+(function () {
+    console.log(a * 2);
+}) ()
