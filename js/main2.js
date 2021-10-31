@@ -1,16 +1,16 @@
-// 콜백(callback)
-// 함수의 인수로 사용되는 함수
-
-// setTimeout(함수, 시간)
-
-function timeout (callback) {
-    setTimeout(() => {
-        console.log('hi');
-        callback();
-    }, 3000);
+function User (first, last) {
+    this.firstName = first;
+    this.lastName = last;
 }
 
-timeout(() => {
-    console.log('done');
-});
+user.prototype.getFullName = function () {
+    return `${this.firstName} ${this.lastName}`
+}
 
+const heropy = new user('Heropy', 'Park');
+const dongdu = new user('Dongdu', 'Lee');
+
+console.log(heropy);
+console.log(dongdu);
+
+const heropy = {} // 리터럴 방식
