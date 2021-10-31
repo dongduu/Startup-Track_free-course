@@ -1,16 +1,43 @@
-function User (first, last) {
-    this.firstName = first;
-    this.lastName = last;
+// this
+// 일반(Nomal) 함수는 호출 위치에서 따라 this 정의!
+// 화살표(Arrow) 함수는 자신이 선언된 함수 범위에서 this 정의!
+
+const heropy = {
+    name: 'Heropy',
+    normal: function () {
+        console.log(this.name);
+    },
+    arrow: () => {
+        console.log(this.name);
+    }
 }
+heropy.normal();
+heropy.arrow();
 
-user.prototype.getFullName = function () {
-    return `${this.firstName} ${this.lastName}`
+const amy = {
+    name: 'amy',
+    normal: heropy.normal,
+    arrow: heropy.arrow
 }
+amy.normal();
+amy.arrow();
 
-const heropy = new user('Heropy', 'Park');
-const dongdu = new user('Dongdu', 'Lee');
+const timer = {
+    name:'dongdu',
+    timeout: function () {
+        setTimeout(function () {
+            console.log(this.name);
+        }, 2000);
+    }
+}
+timer.timeout();
 
-console.log(heropy);
-console.log(dongdu);
-
-const heropy = {} // 리터럴 방식
+const timer2 = {
+    name:'dongdu',
+    timeout: function () {
+        setTimeout(() => {
+            console.log(this.name);
+        }, 2000);
+    }
+}
+timer2.timeout();
