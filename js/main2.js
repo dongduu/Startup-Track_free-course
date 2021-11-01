@@ -1,38 +1,32 @@
-// ES6 classes
-
-// const heropy = {
-//     name: 'Heropy',
-//     normal () { // function 생략 가능
-//         console.log(this.name);
-//     },
-//     arrow: () => {
-//         console.log(this.name);
-//     }
-// }
-// heropy.normal();
-// heropy.arrow();
-
-class User {
-    constructor(first, last) {
-        this.firstName = first;
-        this.lastName = last;
-    }
-    getFullName() {
-        return `${this.firstName} ${this.lastName}`;
+class Vehicle {
+    constructor(name, wheel) {
+        this.name = name;
+        this.wheel = wheel;
     }
 }
+const myVehicle = new Vehicle('운송수단', 2);
+console.log(myVehicle);
 
-// function User (first, last) {
-//     this.firstName = first;
-//     this.lastName = last;
-// }
-// User.prototype.getFullName = function () {
-//     return `${this.firstName} ${this.lastName}`
-// }
+class Bicycle extends Vehicle { // extends: 확장(상속)
+    constructor(name, wheel) {
+        super(name, wheel) // super: 확장된 클래스, Vehicle, super가 있는 자리에서 Vehicle이 실행
+    }
+}
+const myBicycle = new Bicycle('삼천리', 2);
+const duaghterBicycle = new Bicycle('세발', 3);
+console.log(myBicycle);
+console.log(duaghterBicycle);
 
-const heropy = new User('Heropy', 'park');
-const amy = new User('Amy', 'Lee');
-const neo = new User('Neo', 'Kim');
+class Car extends Vehicle {
+    constructor(name, wheel, license) {
+        super(name, wheel)
+        this.license = license; // 진정한 상속, 기존의 내용 + 추가적인 내용
+    }
+}
+const myCar = new Car('벤츠', 4, true);
+const duaghterCar = new Car('포르쉐', 4, false);
+console.log(myCar);
+console.log(duaghterCar);
 
-console.log(heropy);
-console.log(amy.getFullName());
+// 확장과 상속은 혼용이 됨
+// => Car를 만들 때 이미 만들어져 있는 Vehicle 클래스를 가지고 extends와 함께 입력을 하면 Car라는 클래스 내부에서 따로 작성없이 사용 가능 (super = Vehicle)
